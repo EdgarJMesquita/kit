@@ -81,15 +81,17 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/EdgarJMesquita/kit.git", :tag => "#{spec.version}" }
-  spec.vendored_frameworks = "ffmpegkit.xcframework"
-  spec.vendored_frameworks = "libavcodec.xcframework"
-  spec.vendored_frameworks = "libavdevice.xcframework"
-  spec.vendored_frameworks = "libavfilter.xcframework"
-  spec.vendored_frameworks = "libavformat.xcframework"
-  spec.vendored_frameworks = "libavutil.xcframework"
-  spec.vendored_frameworks = "libswresample.xcframework"
-  spec.vendored_frameworks = "libswscale.xcframework"
+  spec.source       = { :git => "https://github.com/EdgarJMesquita/kit.git", :tag => "v#{spec.version}" }
+  spec.vendored_frameworks = [
+  "Frameworks/ffmpegkit.xcframework",
+  "Frameworks/libavcodec.xcframework",
+  "Frameworks/libavdevice.xcframework",
+  "Frameworks/libavfilter.xcframework",
+  "Frameworks/libavformat.xcframework",
+  "Frameworks/libavutil.xcframework",
+  "Frameworks/libswresample.xcframework",
+  "Frameworks/libswscale.xcframework"
+  ]
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -99,8 +101,8 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Classes", "Classes/**/*.{h,m}"
-  spec.exclude_files = "Classes/Exclude"
+  # spec.source_files  = "Classes", "Classes/**/*.{h,m}"
+  # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
 
